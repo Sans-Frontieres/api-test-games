@@ -4,7 +4,7 @@
   "description": "api-test-games",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/"
+    "dev": "nodemon ./src/server/"
   },
   "repository": {
     "type": "git",
