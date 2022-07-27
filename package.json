@@ -1,0 +1,26 @@
+{
+  "name": "api-test-games",
+  "version": "1.0.0",
+  "description": "api-test-games",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sans-Frontieres/api-test-games.git"
+  },
+  "author": "Ezequiel Salomón",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sans-Frontieres/api-test-games/issues"
+  },
+  "homepage": "https://github.com/Sans-Frontieres/api-test-games#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "lowdb": "1.0.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
+  }
+}
