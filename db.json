@@ -1,0 +1,19 @@
+{
+  "games": [
+    {
+      "id": "a4fc812f-d8e8-4a00-84a6-b26b30369273",
+      "title": "Primera tarea creada.",
+      "description": "Mañana no hay clase."
+    },
+    {
+      "id": "84b060b9-1137-4a73-9303-186434cf54e4",
+      "title": "Segunda tarea creada.",
+      "description": "Hoy hay clase."
+    },
+    {
+      "id": "448dfba8-329e-4f93-9368-3b24c39a554f",
+      "title": "Tercera tarea creada.",
+      "description": "Hoy asd hay clase."
+    }
+  ]
+}
