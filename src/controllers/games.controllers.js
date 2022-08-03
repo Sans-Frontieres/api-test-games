@@ -1,4 +1,5 @@
 const v4 = require('uuid').v4;
+const { get } = require('../routes/games.routes');
 const { getConnection } = require('../server/db');
 
 const getAll = async (__, res) => {
@@ -36,4 +37,32 @@ const create = async (req, res) => {
 	res.status(201).json(newGame.id);
 };
 
-module.exports = { getAll, create, count, findByID };
+const update = async (req, res) => {
+	const id = req.params.id;
+	const { title, description } = req.body;
+
+	const db = await getConnection();
+
+	const game = await db.get('games').find({ id }).value();
+
+	if (!game) return res.status(404).json({ message: 'El juego no fue encontrado.' });
+
+	await db.get('games').find({ id }).assign({ title, description }).write();
+
+	res.status(200).json({ id });
+};
+
+const remove = async (req, res) => {
+	const id = req.params.id;
+	const db = await getConnection();
+
+	const game = await db.get('games').find({ id }).value();
+
+	if (!game) return res.tatus(404).json({ message: 'El juego no fue encontrado' });
+
+	await db.get('games').remove({ id }).write();
+
+	res.status(200).json({ juegoEliminado: id });
+};
+
+module.exports = { getAll, create, count, findByID, update, remove };

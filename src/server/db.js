@@ -8,7 +8,7 @@ const createConnection = async () => {
 	const adapter = new FileSync('db.json');
 	db = lowdb(adapter);
 	await db.defaults({ games: [] }).write();
-	console.log('db.js ', db.get('games').value());
+	// console.log('db.js ', db.get('games').value());
 };
 
 const getConnection = () => db;

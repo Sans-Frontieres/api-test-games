@@ -1,11 +1,6 @@
 {
   "games": [
     {
-      "id": "a4fc812f-d8e8-4a00-84a6-b26b30369273",
-      "title": "Primera tarea creada.",
-      "description": "Mañana no hay clase."
-    },
-    {
       "id": "84b060b9-1137-4a73-9303-186434cf54e4",
       "title": "Segunda tarea creada.",
       "description": "Hoy hay clase."
@@ -14,6 +9,36 @@
       "id": "448dfba8-329e-4f93-9368-3b24c39a554f",
       "title": "Tercera tarea creada.",
       "description": "Hoy asd hay clase."
+    },
+    {
+      "id": "5005faaa-169e-404c-999b-303a1739818a",
+      "title": "Segunda tarea creada.",
+      "description": "Hoy hay clase."
+    },
+    {
+      "id": "9cd88735-42ce-4e05-9cac-a94e3e82dc32",
+      "title": "Segunda tarea creada.",
+      "description": "Hoy hay clase."
+    },
+    {
+      "id": "2a8f4fac-37d8-4634-9cef-e6f4c4db8908",
+      "title": "Segunda tarea creada.",
+      "description": "Hoy hay clase."
+    },
+    {
+      "id": "d9d8b4e3-c565-49eb-b896-7be3a8adea5a",
+      "title": "Segunda tarea creada.",
+      "description": "Hoy hay clase."
+    },
+    {
+      "id": "256a69c3-b584-4cac-92cb-781e63551b08",
+      "title": "Segunda tarea creada.",
+      "description": "Hoy hay clase."
+    },
+    {
+      "id": "fbcd85b5-7685-43e5-9a09-1325fe9c60ac",
+      "title": "Segunda tarea creada.",
+      "description": "Hoy hay clase."
     }
   ]
 }
