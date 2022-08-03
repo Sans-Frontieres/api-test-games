@@ -1,0 +1,40 @@
+@api = http://localhost:4000/api/v1/games
+
+
+### Todas los juegos
+GET {{api}}
+
+
+
+### Cantidad de juegos
+GET {{api}}/count
+
+
+
+### Busqueda de juego por ID
+GET {{api}}/a4fc812f-d8e8-4a00-84a6-b26b30369273
+
+
+
+### Creación de un juego
+POST {{api}}
+Content-Type: application/json
+
+{
+    "title": "Segunda tarea creada.",
+    "description": "Hoy hay clase."
+}
+
+
+
+### Edición de un juego
+PUT {{api}}/a4fc812f-d8e8-4a00-84a6-b26b30369273
+Content-Type: application/json
+
+{
+    "title": "Primera tarea creada. (editada)",
+    "description": "Hoy hay clase. *editado)"
+}
+
+###
+DELETE {{api}}/a4fc812f-d8e8-4a00-84a6-b26b30369273
