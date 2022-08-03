@@ -12,7 +12,7 @@ GET {{api}}/count
 
 
 ### Busqueda de juego por ID
-GET {{api}}/a4fc812f-d8e8-4a00-84a6-b26b30369273
+GET {{api}}/8089d6b8-0da1-4869-b5e9-1d6c38bb8cb1
 
 
 
@@ -21,8 +21,8 @@ POST {{api}}
 Content-Type: application/json
 
 {
-    "title": "Segunda tarea creada.",
-    "description": "Hoy hay clase."
+    "title": "Duke Nukem 3D",
+    "description": "blood shooter game"
 }
 
 
