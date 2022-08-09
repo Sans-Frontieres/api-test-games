@@ -1,5 +1,4 @@
 const v4 = require('uuid').v4;
-const { get } = require('../routes/games.routes');
 const { getConnection } = require('../server/db');
 
 const getAll = async (__, res) => {
