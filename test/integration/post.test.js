@@ -13,7 +13,7 @@ beforeEach((done) => {
 
 // # Test Crea un nuevo juego
 
-describe('GET "/games" creacion de un juegos. - (Integration)', () => {
+describe('POST "/games" creacion de un juegos. - (Integration)', () => {
 	it('La creación exitosa devuelve un código de estado 201', async () => {
 		const response = await api.post('/api/v1/games/').send(game);
 		// console.log('ID: ', response.body);

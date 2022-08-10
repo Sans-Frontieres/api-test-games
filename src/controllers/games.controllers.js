@@ -3,12 +3,12 @@ const { getConnection } = require('../server/db');
 
 const getAll = async (__, res) => {
 	const games = await getConnection().get('games').value();
-	res.json({ games, count: games?.length });
+	res.json({ games, count: games.length });
 };
 
 const count = async (__, res) => {
 	const games = await getConnection().get('games').value();
-	res.json({ count: games?.length });
+	res.json({ count: games.length });
 };
 
 const findByID = async (req, res) => {
@@ -16,7 +16,7 @@ const findByID = async (req, res) => {
 
 	const game = await getConnection().get('games').find({ id }).value();
 
-	if (!game) return res.status(404).json({ error: 'Juego no encontrado.' });
+	if (!game) return res.status(404).json({ message: 'Juego no encontrado.' });
 
 	res.status(200).json(game);
 };
@@ -57,11 +57,11 @@ const remove = async (req, res) => {
 
 	const game = await db.get('games').find({ id }).value();
 
-	if (!game) return res.tatus(404).json({ message: 'El juego no fue encontrado' });
+	if (!game) return res.status(404).json({ message: 'El juego no fue encontrado' });
 
 	await db.get('games').remove({ id }).write();
 
-	res.status(200).json({ juegoEliminado: id });
+	res.status(202).json({ id });
 };
 
 module.exports = { getAll, create, count, findByID, update, remove };

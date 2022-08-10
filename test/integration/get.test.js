@@ -13,7 +13,7 @@ beforeEach((done) => {
 
 // # Test Listado completo de juegos
 
-describe.skip('GET "/games" lista de juegos.  - (Integration)', () => {
+describe('GET "/games" lista de juegos.  - (Integration)', () => {
 	it('La api retorna un status 200', async () => {
 		const response = await api.get('/api/v1/games/');
 
@@ -43,7 +43,7 @@ describe.skip('GET "/games" lista de juegos.  - (Integration)', () => {
 
 // # Test Listar cantidad de juegos
 
-describe.skip('GET "/games/count" cantidad de juegos.  - (Integration)', () => {
+describe('GET "/games/count" cantidad de juegos.  - (Integration)', () => {
 	it('La api retorna un status 200', async () => {
 		const response = await api.get('/api/v1/games/count');
 
@@ -82,10 +82,12 @@ describe('GET "/games/:id" Busqueda de juegos por ID.  - (Integration)', () => {
 		expect(response.body.message).to.not.be.undefined;
 	});
 
-	// TODO: Terminar últimos test de Busqueda por ID
-
 	it('Si el juego existe retorna un status 200', async () => {
-		const result = await api.get('');
+		const result = await api.post('/api/v1/games/').send(game);
+
+		const response = await api.get(`/api/v1/games/${result.body}`);
+
+		expect(response).to.have.status(200);
 	});
 });
 

@@ -32,7 +32,7 @@ PUT {{api}}/a4fc812f-d8e8-4a00-84a6-b26b30369273
 Content-Type: application/json
 
 {
-    "title": "Primera tarea creada. (editada)",
+    "title": "Primer juego creado. (editada)",
     "description": "Hoy hay clase. *editado)"
 }
 
