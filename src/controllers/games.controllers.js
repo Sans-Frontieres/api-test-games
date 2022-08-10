@@ -1,17 +1,21 @@
-const v4 = require('uuid').v4;
-const { getConnection } = require('../server/db');
+// const v4 = require('uuid').v4;
+import { v4 } from 'uuid';
+// const { getConnection } = require('../server/db');
+// import { getConnection } from '../server/db.js';
 
-const getAll = async (__, res) => {
-	const games = await getConnection().get('games').value();
+import * as Game from '../model/Game.js';
+
+export const getAll = async (__, res) => {
+	const games = await Game.all();
 	res.json({ games, count: games.length });
 };
 
-const count = async (__, res) => {
-	const games = await getConnection().get('games').value();
+export const count = async (__, res) => {
+	const games = await Game.count();
 	res.json({ count: games.length });
 };
 
-const findByID = async (req, res) => {
+export const findByID = async (req, res) => {
 	const id = req.params.id;
 
 	const game = await getConnection().get('games').find({ id }).value();
@@ -21,7 +25,7 @@ const findByID = async (req, res) => {
 	res.status(200).json(game);
 };
 
-const create = async (req, res) => {
+export const create = async (req, res) => {
 	const { title, description } = req.body;
 
 	const newGame = {
@@ -36,7 +40,7 @@ const create = async (req, res) => {
 	res.status(201).json(newGame.id);
 };
 
-const update = async (req, res) => {
+export const update = async (req, res) => {
 	const id = req.params.id;
 	const { title, description } = req.body;
 
@@ -51,7 +55,7 @@ const update = async (req, res) => {
 	res.status(200).json({ id });
 };
 
-const remove = async (req, res) => {
+export const remove = async (req, res) => {
 	const id = req.params.id;
 	const db = await getConnection();
 
@@ -64,4 +68,4 @@ const remove = async (req, res) => {
 	res.status(202).json({ id });
 };
 
-module.exports = { getAll, create, count, findByID, update, remove };
+// module.exports = { getAll, create, count, findByID, update, remove };

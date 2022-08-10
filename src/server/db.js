@@ -1,18 +1,20 @@
-const lowdb = require('lowdb');
-
-const FileSync = require('lowdb/adapters/FileSync');
+// const lowdb = require('lowdb');
+import lowdb from 'lowdb';
+// const FileSync = require('lowdb/adapters/FileSync');
+import FileSync from 'lowdb/adapters/FileSync.js';
 
 let db;
 
-const createConnection = async () => {
+export const createConnection = async () => {
 	const adapter = new FileSync('db.json');
 	db = lowdb(adapter);
 	await db.defaults({ games: [] }).write();
 	// console.log('db.js ', db.get('games').value());
 };
 
-const getConnection = () => db;
+export const getConnection = () => db;
 
-const resetDatabase = () => getConnection().get('games').remove().write();
+export const resetDatabase = () => getConnection().get('games').remove().write();
 
-module.exports = { createConnection, getConnection, resetDatabase };
+// module.exports = { createConnection, getConnection, resetDatabase };
+// export default { createConnection, getConnection, resetDatabase };

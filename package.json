@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "description": "api-test-games",
   "main": "index.js",
+  "type":"module",
   "scripts": {
     "build": "babel src --out-dir dist",
     "start": "node dist/server",
     "dev": "nodemon ./src/server/  --ignore db.json",
-    "test": "mocha ./test -- --watch --recursive --exit",
-    "test:run": "mocha  ./test --recursive --exit",
-    "test:single": "mocha  -- --watch --recursive --exit -f",
     "kill": "npx kill-port"
   },
   "repository": {
@@ -33,9 +31,6 @@
     "@babel/node": "^7.18.10",
     "@babel/plugin-transform-runtime": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
-    "chai": "^4.3.6",
-    "chai-http": "^4.3.0",
-    "mocha": "^10.0.0",
     "morgan": "^1.10.0",
     "supertest": "^6.2.4"
   }

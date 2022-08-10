@@ -1,6 +1,9 @@
-const express = require('express');
-const morgan = require('morgan');
-const gamesRoutes = require('../routes/games.routes');
+// const express = require('express');
+import express from 'express';
+// const morgan = require('morgan');
+import morgan from 'morgan';
+// const gamesRoutes = require('../routes/games.routes');
+import gamesRoutes from '../routes/games.routes.js';
 
 const app = express();
 
@@ -17,4 +20,5 @@ app.use('/api/v1', (__, res) => {
 	res.status(200).json({ message: 'Respuesta al navegador' });
 });
 
-module.exports = app;
+// module.exports = app;
+export default app;

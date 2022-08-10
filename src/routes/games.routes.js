@@ -1,5 +1,7 @@
-const { Router } = require('express');
-const controller = require('../controllers/games.controllers');
+// const { Router } = require('express');
+import { Router } from 'express';
+// const controller = require('../controllers/games.controllers');
+import * as controller from '../controllers/games.controllers.js';
 
 const router = Router();
 
@@ -16,4 +18,5 @@ router.put('/:id', controller.update);
 
 router.delete('/:id', controller.remove);
 
-module.exports = router;
+// module.exports = router;
+export default router;
