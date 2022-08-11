@@ -17,54 +17,34 @@ export const count = async (__, res) => {
 
 export const findByID = async (req, res) => {
 	const id = req.params.id;
-
-	const game = await getConnection().get('games').find({ id }).value();
-
+	const game = await Game.findByID(id);
 	if (!game) return res.status(404).json({ message: 'Juego no encontrado.' });
-
 	res.status(200).json(game);
 };
 
 export const create = async (req, res) => {
 	const { title, description } = req.body;
-
 	const newGame = {
 		id: v4(),
 		title,
 		description,
 	};
-
-	const db = await getConnection();
-	await db.get('games').push(newGame).write();
-
-	res.status(201).json(newGame.id);
+	const game = await Game.create(newGame);
+	res.status(201).json(game.id);
 };
 
 export const update = async (req, res) => {
 	const id = req.params.id;
 	const { title, description } = req.body;
-
-	const db = await getConnection();
-
-	const game = await db.get('games').find({ id }).value();
-
+	const game = await Game.update(title, description, id);
 	if (!game) return res.status(404).json({ message: 'El juego no fue encontrado.' });
-
-	await db.get('games').find({ id }).assign({ title, description }).write();
-
 	res.status(200).json({ id });
 };
 
 export const remove = async (req, res) => {
 	const id = req.params.id;
-	const db = await getConnection();
-
-	const game = await db.get('games').find({ id }).value();
-
+	const game = await Game.remove(id);
 	if (!game) return res.status(404).json({ message: 'El juego no fue encontrado' });
-
-	await db.get('games').remove({ id }).write();
-
 	res.status(202).json({ id });
 };
 

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "api-test-games",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "build": "babel src --out-dir dist",
     "start": "node dist/server",
@@ -32,6 +32,7 @@
     "@babel/plugin-transform-runtime": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
     "morgan": "^1.10.0",
+    "nodemon": "^2.0.19",
     "supertest": "^6.2.4"
   }
 }
