@@ -2,6 +2,7 @@
 // const { getConnection } = require('../server/db');
 import { v4 } from 'uuid';
 import { getConnection } from '../server/db.js';
+// import * as Game from '../model/Game.js';
 
 export const getAll = async (__, res) => {
 	const games = await getConnection().get('games').value();

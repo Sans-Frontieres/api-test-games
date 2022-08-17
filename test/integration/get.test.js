@@ -12,7 +12,7 @@ describe('GET "/games" lista de juegos.  - (Integration)', () => {
 		expect(response.status).toBe(200);
 	});
 
-	it.skip('La api retorna un array vacio de juegos.', async () => {
+	it('La api retorna un array vacio de juegos.', async () => {
 		const response = await api.get('/api/v1/games/');
 
 		console.log(response.body.games);
@@ -21,19 +21,19 @@ describe('GET "/games" lista de juegos.  - (Integration)', () => {
 		expect(response.body.count).toEqual(0);
 	});
 
-	it.skip('La api retorna un juego almacenado', async () => {
+	it('La api retorna un juego almacenado', async () => {
 		await api.post('/api/v1/games/').send(game);
 
 		const response = await api.get('/api/v1/games/');
 
 		expect(response.body.count).toEqual(1);
-		expect(response.body.games.length).toEqual(1); // lenght -> length
+		expect(response.body.games.length).toEqual(1);
 	});
 });
 
 // # Test Listar cantidad de juegos
 
-describe.skip('GET "/games/count" cantidad de juegos.  - (Integration)', () => {
+describe('GET "/games/count" cantidad de juegos.  - (Integration)', () => {
 	it('La api retorna un status 200', async () => {
 		const response = await api.get('/api/v1/games/count');
 
@@ -57,7 +57,7 @@ describe.skip('GET "/games/count" cantidad de juegos.  - (Integration)', () => {
 
 // # Test Devuelve juego por ID
 
-describe.skip('GET "/games/:id" Busqueda de juegos por ID.  - (Integration)', () => {
+describe('GET "/games/:id" Busqueda de juegos por ID.  - (Integration)', () => {
 	it('Si el juego no existe retorna un status 404', async () => {
 		const idInexistente = '1233-asda3-123ad-123das';
 		const response = await api.get(`/api/v1/games/${idInexistente}`);
