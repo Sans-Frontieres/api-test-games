@@ -6,7 +6,7 @@ import * as controller from '../controllers/games.controllers.js';
 const router = Router();
 
 // router.get('/:id?', controller.welcome);
-//para solicitud de obj entrantes
+// para solicitud de obj entrantes
 
 router.get('/', controller.getAll);
 router.get('/count', controller.count);

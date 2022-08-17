@@ -1,15 +1,15 @@
-// const app = require('./app');
+import './config.js';
 import app from './app.js';
-// const { createConnection } = require('./db');
 import { createConnection } from './db.js';
-
-const PORT = 4000;
 
 createConnection();
 
-const server = app.listen(PORT, () => {
-	console.log(`Server is running at PORT: ${PORT}`);
-});
+const serverRun = () => {
+	app.listen(process.env.PORT, () => {
+		console.log(`Server is running at PORT: ${process.env.PORT}`);
+	});
+};
 
-// module.exports = { server, app };
-export default { app, server };
+if (process.env.NODE_ENV != 'test') serverRun();
+
+export default app;

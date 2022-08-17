@@ -1,22 +1,16 @@
-const chai = require('chai');
-const expect = chai.expect;
-const chaiHttp = require('chai-http');
-chai.use(chaiHttp);
-
-const { server, api } = require('./setup');
+import { api } from '../setup';
 
 describe('Prueba básica de la API-REST. - (Unitario)', () => {
 	it('La api retorna un código de estado 200.', async () => {
 		const response = await api.get('/api/v1');
 
-		expect(response).to.have.status(200);
+		expect(response.status).toBe(200);
 	});
 
 	it('La api retorna un mensaje.', async () => {
 		const response = await api.get('/api/v1');
 
-		// console.log(response.body);
-		expect(response.body.message).to.not.be.undefined;
+		expect(response.body.message).toBeDefined();
 	});
 
 	it('La api retorna un código de estado 200 con el uso del done.', (done) => {
@@ -24,9 +18,4 @@ describe('Prueba básica de la API-REST. - (Unitario)', () => {
 		api.get('/api/v1').expect(200);
 		done();
 	});
-});
-
-after((done) => {
-	server.close();
-	done();
 });
