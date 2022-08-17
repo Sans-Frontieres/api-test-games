@@ -5,6 +5,8 @@ beforeEach((done) => {
 	done();
 });
 
+// # Test Listar juegos
+
 describe('GET "/games" lista de juegos.  - (Integration)', () => {
 	it('La api retorna un status 200', async () => {
 		const response = await api.get('/api/v1/games/');
