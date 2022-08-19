@@ -8,7 +8,7 @@ beforeEach((done) => {
 // # Test Crea un nuevo juego
 
 describe('POST "/games" creacion de un juegos. - (Integration)', () => {
-  it.skip("La creación exitosa devuelve un código de estado 201", async () => {
+  it("La creación exitosa devuelve un código de estado 201", async () => {
     const response = await api.post("/api/v1/games/").send(game);
 
     expect(response.status).toBe(201);
