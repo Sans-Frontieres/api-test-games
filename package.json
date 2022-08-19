@@ -9,9 +9,8 @@
     "start": "node dist/server",
     "dev": "NODE_ENV=development nodemon ./src/server/  --ignore db.json",
     "test:run": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --verbose  --forceExit",
-    "test": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest ./test --verbose",
-    "test:watch": "npm run test --watchAll",
-    "kill": "npx kill-port"
+    "test": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --verbose  --detectOpenHandles",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
