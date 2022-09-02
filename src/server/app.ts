@@ -3,7 +3,7 @@ import express from 'express';
 // const morgan = require('morgan');
 import morgan from 'morgan';
 // const gamesRoutes = require('../routes/games.routes');
-import gamesRoutes from '../routes/games.routes.js';
+import gamesRoutes from '../routes/games.routes';
 
 const app = express();
 

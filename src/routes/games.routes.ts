@@ -1,7 +1,7 @@
 // const { Router } = require('express');
 import { Router } from 'express';
 // const controller = require('../controllers/games.controllers');
-import * as controller from '../controllers/games.controllers.js';
+import * as controller from '../controllers/games.controllers';
 
 const router = Router();
 
@@ -9,14 +9,14 @@ const router = Router();
 // para solicitud de obj entrantes
 
 router.get('/', controller.getAll);
-router.get('/count', controller.count);
-router.get('/:id', controller.findByID);
+// router.get('/count', controller.count);
+// router.get('/:id', controller.findByID);
 
-router.post('/', controller.create);
+// router.post('/', controller.create);
 
-router.put('/:id', controller.update);
+// router.put('/:id', controller.update);
 
-router.delete('/:id', controller.remove);
+// router.delete('/:id', controller.remove);
 
 // module.exports = router;
 export default router;
